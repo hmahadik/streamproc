@@ -41,7 +41,6 @@ RUN apt-get update && \
     libopenblas-dev \
     liblapack-dev \
     libeigen3-dev \
-    gstreamer
     python3 \
     python3-pip \
     python3-scipy \
