@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install Dependencies
+      run: |
+        apt-get install binfmt-support qemu-user-static
+        apt-get install docker.io
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag hmahadik/streamproc-development:$(date +%s)
