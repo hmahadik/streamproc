@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Install Dependencies
       run: |
-        sudo apt-get install binfmt-support qemu-user-static
-        sudo apt-get install docker.io
+        sudo apt-get install -y --no-install-recommends binfmt-support qemu-user-static
+        sudo apt-get install -y --no-install-recommends docker.io
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag hmahadik/streamproc-development:$(date +%s)
